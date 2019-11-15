@@ -65,3 +65,6 @@ public
 
 # contentful config file
 .contentful.json
+
+# netlify config file
+netlify.toml
