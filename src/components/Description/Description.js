@@ -1,35 +1,15 @@
 import React from 'react';
 // import styles from './description.module.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useStaticQuery, graphql } from 'gatsby';
 
-const Description = () => {
-
-  const queryData = useStaticQuery(
-    graphql`
-      {
-        allContentfulDescription {
-          edges {
-            node {
-              id
-              richDescriptionText {
-                json
-              }
-            }
-          }
-        }
-      }
-    `
-  );
+const Description = (props) => {
 
   const document = {
     nodeType: 'document',
     data: {},
     content: [
-      ...queryData
-      .allContentfulDescription
-      .edges[0]
-      .node
+      ...props
+      .data
       .richDescriptionText
       .json
       .content[0]

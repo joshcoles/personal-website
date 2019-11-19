@@ -1,35 +1,28 @@
 import React from 'react';
 
-const Projects = () => {
-  <section className="project-section container">
-    <h2 className="project-heading">Some stuff I've built or worked on</h2>
-    <div className="row projects-list">
-    {this.state.projects.map((project, index) => {
-      return (
-        <div className="project-outer col-lg-4 col-sm-12" key={index}>
-          <a href={project.url}>
-            <div className="project-inner">
-              <h2>{project.name}</h2>
-              {project.description.map((paragraph, index) => {
-                return (
-                  <p key={index}>{paragraph}</p>
-                )
-              })}
-              <h3>Tech Stack: </h3>
-              <ul className="tech-stack">
-                {project.stack.map((tech, index) => {
-                  return (
-                    <li key={index}>{tech}</li>
-                  )
-                })}
-              </ul>
-            </div>
+const Projects = (props) => {
+
+  return (
+    <section className="project-section container">
+      {
+        props.data.map((project) => (
+          <a key={project.node.id} href={project.node.url}>
+            <h3>{project.node.title}</h3>
+            <p>{project.node.childContentfulProjectDescriptionTextNode.description}</p>
+            
+            <span>Tech stack:</span>
+            <ul>
+              {
+                project.node.techStack.map((tech, index) => (
+                  <li key={index}>{tech.content}</li>
+                ))
+              }
+            </ul>  
           </a>
-        </div>
-      )
-    })}
-    </div>
-  </section>
+        ))
+      }
+    </section>
+  )
 }
 
 export default Projects;

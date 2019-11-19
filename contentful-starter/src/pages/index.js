@@ -9,10 +9,7 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
-    // const description = get(this, 'props.data.allContentfulDescription.edges.descriptionText');
 
-    // console.log(posts);
-    // console.log(description);
 
     return (
       <div style={{ background: '#fff' }}>
