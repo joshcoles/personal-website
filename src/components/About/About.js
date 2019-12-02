@@ -3,6 +3,8 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const About = (props) => {
 
+  // Prepare rich text from contentful to be transformed 
+  // into components/markup by rich text renderer package
   const document = {
     nodeType: 'document',
     data: {},

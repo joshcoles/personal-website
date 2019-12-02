@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import Layout from '../components/Layout.js';
 import Hero from '../components/Hero/Hero.js';
 import Description from '../components/Description/Description.js';

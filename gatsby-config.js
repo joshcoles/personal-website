@@ -37,8 +37,6 @@ module.exports = {
         host: `preview.contentful.com`
       }
     },
-    `gatsby-plugin-sass`,
-    `@contentful/rich-text-types`,
-    `@contentful/rich-text-react-renderer`
+    `gatsby-plugin-sass`
   ]
 }
