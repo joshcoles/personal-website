@@ -1,36 +1,37 @@
 import React from 'react';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import styles from './social.module.scss';
 
 const Social = (props) => (
-  <div>
-    <ul>
+  <div className={styles.social}>
+    <ul className={styles.list}>
       {
         props.items.map((item) => {
           let icon;
 
           switch(item.type) {
             case 'twitter':
-              icon = <FaTwitter/>;
+              icon = <FaTwitter size={25}/>;
               break;
             case 'facebook':
-              icon = <FaFacebook/>;
+              icon = <FaFacebook size={25}/>;
               break;
             case 'linkedin':
-              icon = <FaLinkedin/>;
+              icon = <FaLinkedin size={25}/>;
               break;
             case 'github':
-              icon = <FaGithub/>;
+              icon = <FaGithub size={25}/>;
               break;
             case 'instagram':
-              icon = <FaInstagram/>;
+              icon = <FaInstagram size={25}/>;
               break;
           }
 
+          console.log(styles[item.type])
+
           return (
-            <li key={item.id} className='twitter'>
-              <a href={item.url} target='_blank' rel='noopener noreferrer'>
-                {item.type} {icon}
-              </a>
+            <li className={`${styles.icon} ${styles[item.type]}`} key={item.id}>
+              <a href={item.url} target='_blank' rel='noopener noreferrer'>{icon}</a>
             </li>
           )
         })

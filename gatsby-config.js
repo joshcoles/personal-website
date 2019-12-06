@@ -37,6 +37,16 @@ module.exports = {
         host: `preview.contentful.com`
       }
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:400,500`,
+          `Lora\:400, 400i`
+        ],
+        display: 'swap'
+      }
+    }
   ]
 }

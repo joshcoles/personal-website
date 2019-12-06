@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './projects.module.scss';
 
 const Projects = (props) => {
 
   return (
-    <section className="project-section container">
+    <section className={styles.projects}>
       {
         props.data.map((project) => (
           <a key={project.node.id} href={project.node.url}>

@@ -6,6 +6,7 @@ import Description from '../components/Description/Description.js';
 import Services from '../components/Services/Services.js';
 import About from '../components/About/About.js';
 import Projects from '../components/Projects/Projects.js';
+// import '../SCSS/styles.scss';
 
 export default ({ data }) => {
 
