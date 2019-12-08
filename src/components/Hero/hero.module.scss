@@ -4,6 +4,12 @@
   background-position: center;
   grid-template-rows: 50px 1fr 300px;
   height: 100vh;
+
+  @media only screen and (min-width: $small-desktop) {
+    
+    // This is the window height of an iPhone 6/7/8 Plus
+    max-height: 736px;
+  }
 }
 
 .content {
@@ -13,6 +19,12 @@
   grid-column: span 12;
   grid-row: span 2;
   justify-content: center;
+
+  @media only screen and (min-width: $small-desktop) {
+    align-items: flex-end;
+    grid-column-end: 12;
+    justify-content: flex-end;
+  }
 
   h1, p {
     font-family: $primary-font;

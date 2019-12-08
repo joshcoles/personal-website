@@ -1,8 +1,23 @@
 @import '../../SCSS/variables';
 
+$platforms: (
+  facebook: $facebook,
+  twitter: $twitter,
+  linkedin: $linkedin,
+  instagram: $instagram,
+  github: $github
+);
+
 .social {
   display: flex;
   grid-column: span 12;
+  justify-content: center;
+
+  @media only screen and (min-width: $small-desktop) {
+    justify-content: flex-end;
+    grid-column-start: 8;
+    grid-column-end: 12;
+  }
 }
 
 .list {
@@ -10,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
+  max-width: 300px;
   width: 100%;
 }
 
@@ -47,49 +63,13 @@
   }
 }
 
-
-.facebook {
-  &:hover {
-    border-color: $facebook;
-    svg {
-      fill: $facebook;
+@each $platform, $color in $platforms {
+  .#{$platform} {
+    &:hover {
+      border-color: $color;
+      svg {
+        fill: $color;
+      }
     }
   }
 }
-
-.twitter {
-  &:hover {
-    border-color: $twitter;
-    svg {
-      fill: $twitter;
-    }
-  }
-}
-
-.linkedin {
-  &:hover {
-    border-color: $linkedin;
-    svg {
-      fill: $linkedin;
-    }
-  }
-}
-
-.github {
-  &:hover {
-    border-color: $github;
-    svg {
-      fill: $github;
-    }
-  }
-}
-
-.instagram {
-  &:hover {
-    border-color: $instagram;
-    svg {
-      fill: $instagram;
-    }
-  }
-}
-
