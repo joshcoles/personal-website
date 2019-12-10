@@ -1,6 +1,7 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './description.module.scss';
+import { FaLevelDownAlt } from 'react-icons/fa';
 
 const Description = (props) => {
 
@@ -20,13 +21,9 @@ const Description = (props) => {
   }
 
   return (
-    <div className="description container-fluid">
-      <div className="row">
-        <div className="col-xs-12">
-          <h3 className="description-content">{documentToReactComponents(document)}</h3>
-        </div>
-      </div>
-    </div>
+    <section className={styles.description}>
+      <h3>{documentToReactComponents(document)}&nbsp;<FaLevelDownAlt size={25}/></h3>
+    </section>
   )
   
 }

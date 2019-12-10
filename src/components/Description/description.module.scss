@@ -1,0 +1,42 @@
+@import '../../SCSS/variables';
+
+.description {
+  align-items: center;
+  background-color: $primary-color;
+  min-height: 200px;
+  
+  @media only screen and (min-width: $tablet) {
+    min-height: 300px;
+  }
+
+  @media only screen and (min-width: $tablet) {
+    padding-top: 1em;
+  }
+
+  h3 {
+    color: $white;
+    font-family: $primary-font;
+    font-weight: 200;
+    font-size: 24px;
+    grid-column: 1 / 13;
+    letter-spacing: 0;
+    text-align: center;
+
+    @media only screen and (min-width: $tablet) {
+      grid-column: 2 / 12;
+    }
+  
+    @media only screen and (min-width: $small-desktop) {
+      padding-top: 1 / 13;
+    }
+  }
+
+  b {
+    color: $secondary-color;
+    font-weight: 200;
+  }
+
+  svg {
+    fill: $secondary-color;
+  }
+}

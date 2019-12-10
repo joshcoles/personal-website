@@ -1,0 +1,31 @@
+@import '../../SCSS/variables';
+
+.services {
+  background-color: $primary-color-light;
+
+  @media only screen and (min-width: $large-desktop) {
+    padding: 3em 1em;
+  }
+}
+
+.inner {
+  display: grid;
+  grid-column: span 12;
+  grid-template-rows: repeat(4, 1fr);
+
+  @media only screen and (min-width: $tablet) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (min-width: $small-desktop) {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: -100px;
+    min-height: 250px;
+  }
+
+  @media only screen and (min-width: $large-desktop) {
+    grid-column: 2 / 12; 
+  }
+}

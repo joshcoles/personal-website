@@ -27,8 +27,6 @@ const Social = (props) => (
               break;
           }
 
-          console.log(styles[item.type])
-
           return (
             <li className={`${styles.icon} ${styles[item.type]}`} key={item.id}>
               <a href={item.url} target='_blank' rel='noopener noreferrer'>{icon}</a>
