@@ -1,0 +1,61 @@
+@import '../../SCSS/variables';
+
+.about {
+  background-color: $secondary-color;
+  padding: 0;
+  display: block;
+
+  @media only screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0;
+  }
+
+  @media only screen and (min-width: $large-desktop) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.content {
+  display: grid;
+  padding: 2em 1em;
+  text-align: center;
+
+  h2 {
+    align-items: flex-end;
+    color: $white;
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+  }
+
+  p {
+    color: $primary-color;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  a {
+    color: $white;
+  }
+  
+  @media only screen and (min-width: $large-desktop) {
+    grid-column: 7 / 12;
+  }
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+
+  @media only screen and (min-width: $tablet) {
+    min-height: 400px;
+  }
+
+  @media only screen and (min-width: $large-desktop) {
+    grid-column: 1 / 7;
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import Service from './Service/Service.js';
 import styles from './services.module.scss';
-console.log(styles);
 
 const services = (props) => (
   <section className={styles.services}>

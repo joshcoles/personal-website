@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaArrowCircleUp } from 'react-icons/fa';
 import styles from './social.module.scss';
 
 const Social = (props) => (
@@ -24,6 +24,9 @@ const Social = (props) => (
               break;
             case 'instagram':
               icon = <FaInstagram size={25}/>;
+              break;
+            default:
+              icon = <FaArrowCircleUp size={25} />
               break;
           }
 

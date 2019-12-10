@@ -1,5 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import styles from './about.module.scss';
 
 const About = (props) => {
 
@@ -21,16 +22,16 @@ const About = (props) => {
   }
 
   const descriptionMarkup = documentToReactComponents(document);
+  const image = { ...props.data.edges[0].node.image };
 
   return (
-    <div className="about container-fluid">
-      <div className="about-image col-sm-6 col-xs-12">
+    <section className={styles.about}>
+      <div className={styles.image} style={{backgroundImage: `url(${image.file.url})`}}></div>
+      <div className={styles.content}>
+        <h2>{props.data.edges[0].node.title}</h2>
+        <p>{descriptionMarkup}</p>
       </div>
-      <div className="about-description col-sm-6 col-xs-12">
-        <h2 className="about-heading">{props.data.edges[0].node.title}</h2>
-        <p className="about-content">{descriptionMarkup}</p>
-      </div>
-    </div>
+    </section>
   )
 }
 
