@@ -22,13 +22,7 @@
   text-align: center;
 
   h2 {
-    align-items: flex-end;
     color: $white;
-    display: flex;
-    font-size: 40px;
-    font-weight: 500;
-    justify-content: center;
-    text-align: center;
   }
 
   p {
@@ -41,6 +35,16 @@
     color: $white;
   }
   
+  @media only screen and (min-width: $tablet) {
+    h2 {
+      justify-content: flex-start;
+      padding-bottom: 0.5em;
+    }
+    p {
+      text-align: left;
+    }
+  }
+
   @media only screen and (min-width: $large-desktop) {
     grid-column: 7 / 12;
   }

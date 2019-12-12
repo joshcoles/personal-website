@@ -11,4 +11,14 @@ section {
   grid-column-gap: 1em;
   grid-row-gap: 1em;
   padding: 2em 1em;
+  
+  h2 {
+    align-items: flex-end;
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1;
+    text-align: center;
+  }
 }

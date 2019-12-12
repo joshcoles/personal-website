@@ -1,4 +1,99 @@
+@import '../../SCSS/variables';
+
 .projects {
+  grid-row-gap: 2em;
+  grid-template-rows: auto 1fr;
+
+  h2 {
+    color: $primary-color;
+    grid-column: span 13;
+  }
+}
+
+.project {
+  background-color: $primary-color;
+  color: $white;
   display: flex;
   flex-direction: column;
+  padding: 2em 1em;
+  transition: transform 0.2s $project-hover-transition, box-shadow 0.2s $project-hover-transition;
+
+  h3, span {
+    border-bottom: 3px solid $secondary-color;
+    color: $secondary-color;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    text-shadow: none;
+  }
+
+  &:hover {
+
+    box-shadow:  0px 10px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+    transition: transform 0.2s $project-hover-transition, box-shadow 0.2s $project-hover-transition;
+    
+    p, li {
+      color: $white;
+    }
+  }
+
+  &:nth-child(2n+1) {
+    background-color: $secondary-color;
+    color: $white;
+    color: $primary-color;
+
+    h3, span {
+      border-bottom: 3px solid $white;
+      color: $primary-color;
+      color: $white;
+      text-shadow: $primary-color 1px 1px 1px;
+    }
+
+    &:hover {
+      p, li {
+        color: $primary-color;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  span {
+    font-size: 22px;
+    margin-top: 1em;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px 5px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+.projects-container {
+  display: grid;
+  grid-column: span 13;
+  grid-gap: 1em;
+
+  @media only screen and (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (min-width: $small-desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media only screen and (min-width: $large-desktop) {  
+    grid-column: 2 / 12;
+  }
 }

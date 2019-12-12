@@ -1,12 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout.js';
+import Layout from '../components/Layout/Layout.js';
 import Hero from '../components/Hero/Hero.js';
 import Description from '../components/Description/Description.js';
 import Services from '../components/Services/Services.js';
 import About from '../components/About/About.js';
 import Projects from '../components/Projects/Projects.js';
-// import '../SCSS/styles.scss';
 
 export default ({ data }) => {
 
@@ -16,7 +15,9 @@ export default ({ data }) => {
       <Description data={data.allContentfulDescription.edges[0].node} />
       <Services data={data.allContentfulService.edges} />
       <About data={data.allContentfulAbout}/>
-      <Projects data={data.allContentfulProject.edges}/>
+      <Projects
+        description={data.allContentfulProjectDescription.edges[0].node}
+        projects={data.allContentfulProject.edges}/>
     </Layout>
   )
 }
@@ -80,6 +81,13 @@ export const query = graphql`
           childContentfulAboutDescriptionRichTextNode {
             json
           }
+        }
+      }
+    }
+    allContentfulProjectDescription {
+      edges {
+        node {
+          projectDescription
         }
       }
     }

@@ -1,0 +1,10 @@
+@import '../../SCSS/variables';
+
+.footer {
+  align-items: center;
+  background-color: $primary-color;
+  color: $white;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+}

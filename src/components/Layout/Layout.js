@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import styles from './layout.module.scss';
 
 const Layout = ({ children }) => {
   
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <main>{children}</main>
-      <footer>
+      <footer className={styles.footer}>
         <span>© {new Date().getFullYear()}, Built by {author} using <a href="https://www.gatsbyjs.org">Gatsby.</a></span>
       </footer>
     </Fragment>
