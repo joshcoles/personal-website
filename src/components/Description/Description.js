@@ -22,7 +22,7 @@ const Description = (props) => {
 
   return (
     <section className={styles.description}>
-      <h3>{documentToReactComponents(document)}&nbsp;<FaLevelDownAlt size={25}/></h3>
+      <h3>{documentToReactComponents(document)}&nbsp;<FaLevelDownAlt size={20}/></h3>
     </section>
   )
   

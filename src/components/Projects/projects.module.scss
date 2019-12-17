@@ -7,16 +7,54 @@
   h2 {
     color: $primary-color;
     grid-column: span 13;
+    margin: 1em 0 0.5em 0;
+  }
+}
+
+
+.projects-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: span 13;
+
+  @media only screen and (min-width: $tablet) {
+  
+  }
+
+  @media only screen and (min-width: $small-desktop) {
+  
+  }
+
+  @media only screen and (min-width: $large-desktop) {  
+    
   }
 }
 
 .project {
   background-color: $primary-color;
+  box-sizing: border-box;
   color: $white;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  margin: 1em 0;
+  min-width: 100%;
   padding: 2em 1em;
   transition: transform 0.2s $project-hover-transition, box-shadow 0.2s $project-hover-transition;
+
+  @media only screen and (min-width: $tablet) {
+    margin: 1em;
+    min-width: 35%;
+  }
+
+  @media only screen and (min-width: $small-desktop) {
+    min-width: 25%;
+  }
+
+  @media only screen and (min-width: $large-desktop) {  
+    
+  }
 
   h3, span {
     border-bottom: 3px solid $secondary-color;
@@ -77,23 +115,5 @@
     padding: 2px 5px;
     margin-right: 3px;
     margin-bottom: 3px;
-  }
-}
-
-.projects-container {
-  display: grid;
-  grid-column: span 13;
-  grid-gap: 1em;
-
-  @media only screen and (min-width: $tablet) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media only screen and (min-width: $small-desktop) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media only screen and (min-width: $large-desktop) {  
-    grid-column: 2 / 12;
   }
 }

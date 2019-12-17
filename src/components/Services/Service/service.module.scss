@@ -29,13 +29,14 @@
   @media only screen and (min-width: $small-desktop) {
     position: relative;
     &:after {
-      position: absolute;
       content: "";
       background-color: $primary-color-light;
       border-radius: 50%;
-      z-index: 1;
-      width: 250px;
       height: 250px;
+      position: absolute;
+      top: -10px;
+      width: 250px;
+      z-index: 1;
     }
 
     img, h2, p {

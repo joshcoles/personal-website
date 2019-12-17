@@ -7,4 +7,12 @@
   display: flex;
   height: 200px;
   justify-content: center;
+
+  span {
+    text-align: center;
+  }
+
+  a {
+    color: $secondary-color;
+  }
 }
