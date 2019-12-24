@@ -3,12 +3,15 @@ import styles from './projects.module.scss';
 
 const Projects = (props) => {
 
+  // Sort projects by orderNumber value
+  const projects = props.projects.sort((prev, next) => prev.node.orderNumber - next.node.orderNumber);
+
   return (
     <section className={styles.projects}>
       <h2>{props.description.projectDescription}</h2>
       <div className={styles.projectsContainer}>
         {
-          props.projects.map((project) => (
+          projects.map((project) => (
             <a className={styles.project} key={project.node.id} href={project.node.url}>
               <h3>{project.node.title}</h3>
               <p>{project.node.childContentfulProjectDescriptionTextNode.description}</p>

@@ -97,6 +97,7 @@ export const query = graphql`
           id
           title
           url
+          orderNumber
           techStack {
             content
           }
